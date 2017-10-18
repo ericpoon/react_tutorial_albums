@@ -14,11 +14,11 @@ class AlbumList extends Component {
 
     renderAlbums() {
         // we add key for iterated items for performance purpose
-        // so react knows which item is updating
+        // this helps react know which item is updating
         // only requirement is each key should be unique
         // don't use item's index as in each iteration the id may vary
         return this.state.albums.map(album =>
-            <Text key={album.title}>{album.title}</Text>
+            <AlbumDetail key={album.title} album={album}/>
         );
     }
 
